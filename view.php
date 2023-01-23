@@ -56,12 +56,6 @@ $total = mysqli_num_rows($data);
 if($total !=0)
 {
 	?>
-<?php
-// Set session variables
-$_SESSION["favcolor"] = "green";
-$_SESSION["favanimal"] = "cat";
-echo "Session variables are set.";
-?>
 
 <h2 align="center"><mark>View order details</mark></h2>
 
@@ -79,12 +73,12 @@ echo "Session variables are set.";
 	while($result = mysqli_fetch_assoc($data))
 	{
 		echo "<tr>
-		       <td>".$_SESSION["favcolor"] ."</td>
-               <td>".$_SESSION["favcolor"] ."</td>
-	           <td>".$_SESSION["favcolor"] ."</td>
-			   <td>".$result['email']."</td>
-	           <td>".$result['product']."</td>
-	           <td>".$result['quantity']."</td>
+		<td>".$result['orid']."</td>
+		<td>".$result['fname']."</td>
+		<td>".$result['phone']."</td>
+		<td>".$result['email']."</td>
+		<td>".$result['product']."</td>
+		<td>".$result['quantity']."</td>
 	       </tr>
 		   "; 
 	}
