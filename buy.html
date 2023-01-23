@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body style="font-size:50px;color: white; background-image: url('background10.jpg')">
+	<form action="buyconnect.php" name="f1" method="post" >
+	  <em> Name:</em>
+	  <input type="text" name="name" id="name" size="50"  value="" required>
+      <br>
+		
+		<em> Phone number</em>
+        <input type="text" name="phonenumber" id="phonenumber" size="13" padding:40px; value="" required>
+      <br>
+		
+		
+		<em> </em>:
+        <input type="text" name="address" id="address" size="50" padding:40px; value="" required>
+      <br>
+		<input type="submit" id="create" value="submit" class="submit_btn" onClick="return validate_password()">
+	
+	
+	
+	
+	
+	
+	</form>
+	 <script>
+        function validate_password() 
+		 {
+ 
+         var f=document.getElementById('arecanuttype').value;
+			
+			 var m=document.getElementById('quantity').value;
+			 
+			 if(f=="")
+				 {
+					 document.getElementById('arecanuttyp').innerHTML="  please enter valid type";
+					 document.getElementById('arecanuttyp').style.color="black";
+					 return false;
+				 }
+			 if((f.length <= 2)||(f.length > 20))
+				 {
+					 document.getElementById('arecanuttyp').innerHTML="";
+					 					 document.getElementById('arecanuttyp').style.color="black";
+					 return false;
+				 }
+			 if(!isNaN(f))
+				 {
+					  document.getElementById('arecanuttyp').innerHTML="only characters are allowed";
+					 					 document.getElementById('arecanuttyp').style.color="black";
+					 return false;
+				 }
+			 
+			  if(m=="")
+				 {
+					 document.getElementById('quantit').innerHTML="  please fill the mobile number field";
+					 					 document.getElementById('quantit').style.color="black";
+					 return false;
+				 }
+			 if(isNaN(m))
+				 {
+					 document.getElementById('quantit').innerHTML="user must write digits only not characters";
+					 					 document.getElementById('quantit').style.color="black";
+					 return false;
+				 }
+			 if(m.length!=13)
+				 {
+					document.getElementById('quantit').innerHTML="   quantity must be 10 digits only";
+					 document.getElementById('quantit').style.color="black";
+					 return false; 
+				 }
+		 }
+	</script>
+			 
+</body>
+</html>

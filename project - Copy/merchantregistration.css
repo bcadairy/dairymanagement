@@ -1,0 +1,122 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:20px;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+	color: darkblue;
+}
+
+body{ 
+  background-image:url("abc.jpg");
+	background-size: cover;
+}
+.wrapper{
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  display: flex;
+	color: aqua;
+}
+.wrapper :hover{
+	color: rgb(116,0,0,0.85)
+}
+.registration_form{
+  border-radius: 5px;
+  width: 400px;
+  background:auto;
+  padding: 25px;
+}
+.registration_form .title{
+  color: blue;
+  background-color: orange;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-align: center;
+  font-size: 25px;
+  text-transform: uppercase;
+  margin-top: -25px;
+  margin-left:-25px;
+  margin-right:-25px;
+}
+.form_wrap{
+  margin-top: 25px;
+	color: aquamarine;
+}
+.form_wrap .input_wrap{
+  margin-bottom: 25px;
+	color: aqua;
+  
+}
+.form_wrap .input_wrap:last-child{
+  margin-bottom: 35px;
+}
+.form_wrap .input_wrap label{
+  margin-bottom: 2px;
+  color: paleturquoise;
+  display: block;
+}
+.form_wrap .input_grp{
+  display: flex;
+  justify-content: space-between;
+}
+.form_wrap .input_grp  input[type="text"]{
+  width: 190%;
+}
+.form_wrap  input[type="text"]{
+  width: 190%;
+  padding: 10px;
+  outline: none;
+  border-radius: 0px;
+  border: 1.3px #FFA8AA;
+}
+.form_wrap  input[type="tel"]{
+  width: 190%;
+  padding: 5px;
+  outline:medium;
+  border-radius: px;
+  border: 1.3px #FFA8AA;
+	display: block;
+}
+.form_wrap  input[type="password"]{
+  width: 190%;
+  padding: 5px;
+  outline:medium;
+  border-radius: px;
+  border: 1.3px #FFA8AA;
+	display: block;
+}
+.form_wrap  input[type="text"]:focus{
+  border-color: gold;
+
+
+}
+/* Submit Button */
+.form_wrap .submit_btn{
+  font-size:15px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  width: 100%;
+	height:20%;
+  background: #850294;
+  padding: 10px;
+	
+  border: 0;
+  color:white;
+}
+/* Button Hover effect */
+.form_wrap .submit_btn:hover{
+  background: #AE6F07;
+}
+.submit_btn{
+	background: #B85D03;
+	font-size: 17px;
+	color: beige;
+}
+
+.form_wrap .span{
+	color: green;
+}

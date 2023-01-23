@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <link rel="stylesheet" href="registration.css">
+ 
+  <style>
+   body {
+      
+      background-size: cover;
+    }
+    </style>
+	  
+	 
+  </head>
+<body background-image>
+<div class="wrapper">
+<div class="registration_form"> <!-- Title -->
+    <div class="title">
+       Registration Form
+     </div>
+   
+   <!-- Form -->
+  
+		<form action="register.php" name="f1"  method="post">
+     <div class="form_wrap">
+      <div class="input_grp">
+   
+   <div>
+        
+   
+   
+		 
+	<!-- Username input Place -->
+  
+    <div class="input_wrap">
+        <label for="usrename">User Name :</label>
+        <input type="text" id="username" name="username" required placeholder="username">
+           <span id="usernam" ></span>
+       </div>
+      
+            
+
+		 
+   
+   <!-- Email Id input Place -->
+  
+    <div class="input_wrap">
+     <label for="email">Email Address :</label>
+     <input type="text" id="email" name="email" required placeholder="abcdefgh123@gmail.com">
+		<span id="emai" ></span>
+    </div>
+   
+   <!-- Mobile no input place -->
+    <div class="input_wrap">
+     <label for="Phonenumber">Mobile Number :</label>
+     <input type="tel" id="Phonenumber" name="Phonenumber" value="+91"  maxlength="13/"  required>
+		<span id="Mobilenum" ></span>
+    </div>
+
+	
+    <!--passward-->
+    <div  class="input_wrap">
+    <label for="password">password :</label>
+    <input type="password" id="password" name="password" required placeholder="enter your password">
+<span id="passward" ></span>
+    </div>
+
+    <!-- retype passward-->
+    <div  class="input_wrap">
+      <label for=" Confirmpassword"> confirm password :</label>
+      <input type="password" id="Confirmpassword" name="Confirmpassword" required placeholder="Retype password">
+		<span id="confirmpassward" ></span>
+      </div>
+   </div>
+		
+		
+<!-- Submit button -->
+		  
+    <div class="input_wrap"> </div>
+    
+   </div>
+      <input type="submit" id="create" value="Register Now" class="submit_btn" onClick="return validate_password()">
+
+
+   
+		<div>
+			<br>
+          <a style="font-size: 10px;" class="submit_btn" href="loginn.html"> Already registered!!.. CLick here to login</a>		
+		 </div>
+			</div>
+	   </form>
+   
+
+
+	
+    <script>
+        function validate_password() 
+		 {
+ 
+         var f=document.getElementById('username').value;
+			
+			 var e=document.getElementById('email').value;
+			 var m=document.getElementById('Phonenumber').value;
+			 var p=document.getElementById('password').value;
+			 var c=document.getElementById('Confirmpassword').value;
+			 
+			 if(f=="")
+				 {
+					 document.getElementById('uernam').innerHTML="  please enter valid name";
+					 document.getElementById('usernam').style.color="black";
+					 return false;
+				 }
+			 if((f.length <= 2)||(f.length > 20))
+				 {
+					 document.getElementById('usernam').innerHTML="user length must be between 2 and 20";
+					 					 document.getElementById('usernam').style.color="black";
+					 return false;
+				 }
+			 if(!isNaN(f))
+				 {
+					  document.getElementById('usernam').innerHTML="only characters are allowed";
+					 					 document.getElementById('usernam').style.color="black";
+					 return false;
+				 }
+			 
+			 
+			 
+			 
+			/*  if(l=="")
+				 {
+					 document.getElementById('lastnam').innerHTML="   please fill valid name";
+					 					 document.getElementById('lastnam').style.color="black";
+					 return false;
+				 }
+			 if((f.length <= 2)||(f.length > 20))
+				 {
+					 document.getElementById('lastnam').innerHTML="    user length must be between 2 and 19";
+					 					 document.getElementById('lastnam').style.color="black";
+					 return false;
+				 }
+			 if(!isNaN(f))
+				 {
+					  document.getElementById('lastnam').innerHTML="    only characters are allowed";
+					 					 document.getElementById('lastnam').style.color="black";
+					 return false;
+				 }*/
+			 
+			 
+			 
+			 if(e=="")
+				 {
+				  document.getElementById('emai').innerHTML="   please fill the email field";
+										 document.getElementById('emai').style.color="black";
+					 return false;
+				 }
+			 if(e.indexOf('@') <= 0)
+				 {
+					  document.getElementById('emai').innerHTML="   @ invalid position";
+					 					 document.getElementById('emai').style.color="black";
+					 return false;
+				 }
+			 if((e.charAt(e.length-4)!='.') && (e.charAt(e.length-3)!='.'))
+			 {
+				 document.getElementById('emai').innerHTML="   @ invalid position";
+				 					 document.getElementById('emai').style.color="black";
+					 return false; 
+			 }
+			
+			 
+			 
+			 
+			 if(m=="")
+				 {
+					 document.getElementById('Mobilenum').innerHTML="  please fill the mobile number field";
+					 					 document.getElementById('Mobilenum').style.color="black";
+					 return false;
+				 }
+			 if(isNaN(m))
+				 {
+					 document.getElementById('Mobilenum').innerHTML="user must write digits only not characters";
+					 					 document.getElementById('Mobilenum').style.color="black";
+					 return false;
+				 }
+			 if(m.length!=13)
+				 {
+					document.getElementById('Mobilenum').innerHTML="   mobile number must be 10 digits only";
+					 document.getElementById('Mobilenum').style.color="black";
+					 return false; 
+				 }
+
+			 if(p=="")
+				 {
+					  document.getElementById('passward').innerHTML="   please fill the password field";
+					 					 document.getElementById('passward').style.color="black";
+					 return false;
+				 }
+			 if((p.length <= 5) || (p.length >20))
+				 {
+					document.getElementById('passward').innerHTML="   passsword length must be between 5 and 20";
+					 					 document.getElementById('passward').style.color="black";
+					 return false; 
+				 }
+			 if(p!=c)
+				 {
+					 document.getElementById('passward').innerHTML="   passsword are not matching";
+					 					 document.getElementById('passward').style.color="black";
+					 return false; 
+				 }
+
+			if(c=="")
+				{
+					document.getElementById('confirmpassward').innerHTML="   please fill the confirmpasssword field";
+										 document.getElementById('confirmpassward').style.color="black";
+					 return false; 
+				}
+				 
+				 
+            var pass = document.getElementById('password').value;
+            var confirm_pass = document.getElementById('Confirmpassword').value;
+			if ( pass != confirm_pass) 
+			{
+				alert("PASSWORD DOESN'T MATCH");
+				return false;
+               
+            } else 
+			{
+				
+            return true;
+            }
+        }
+		 
+        
+		 
+    </script>
+	  
+
+ </body>
+</html>
