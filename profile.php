@@ -1,3 +1,11 @@
+<?php
+// Start the session
+session_start();
+if(!$_SESSION["email"]){
+    header('location:login.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
  
@@ -17,11 +25,18 @@
 "https://media.geeksforgeeks.org/wp-content/uploads/20210223165952/gfglogo.png"
             alt="this image contains user-image">
         </div>
- 
+        <?php
+       
+ include("connection.php");
+error_reporting(0);
+	
+$query = "SELECT * FROM register Where email='".$_SESSION["email"]."'"; 
+$data = mysqli_query($conn, $query);
+$profile = mysqli_fetch_assoc($data);
+?>
         <div class="content">
             <h3 class="name">My profile</h3>
-            <p class="username">Ashwini Adkepal</p>
- 
+
  
             <div class="links">
                 <a class="facebook" href=
@@ -48,11 +63,13 @@
                     <i class="fab fa-instagram-square"></i>
                 </a>
             </div>
- 
             <p class="details">
-                A Computer Science portal for geeks
+            <b> Phone:</b> <?php echo $profile["Phonenumber"]; ?>
+      
+               <br>
+               <b> Email:</b> <?php echo $profile["email"]; ?>
             </p>
- 
+
  
             <a class="effect effect-4" href="view.php">
                 my order
