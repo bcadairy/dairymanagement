@@ -1,4 +1,13 @@
 <?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<body>
+</body>
+</html>
+
+<?php
 $success=0;
 $user=0;
 
@@ -13,8 +22,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		if($num>0){
 			$user=1;
 			echo "connected";
-		    session_register($email);
-			$_SESSION['userName']=$email;
+			$_SESSION["email"] = $email;
 		}
 		else{
 			$success=1;
